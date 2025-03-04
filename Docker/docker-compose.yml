@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: ml_postgres
+    restart: always
+    ports:
+      - "5434:5432" 
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: hunter09
+      POSTGRES_DB: main_database
+    volumes:
+      - ./data:/var/lib/postgresql/data 
+      - ./dump:/db_dumps
